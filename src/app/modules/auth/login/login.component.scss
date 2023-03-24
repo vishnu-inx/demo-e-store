@@ -1,0 +1,224 @@
+.login-register-text {
+    min-height: 76px;
+    text-align: center;
+
+    p {
+        text-align: center;
+        font: normal normal normal 16px/25px Lato;
+        letter-spacing: 0px;
+        color: var(--gray-dark-color);
+
+        span {
+            text-align: center;
+            font: normal normal normal 16px/25px Lato;
+            letter-spacing: 0px;
+            color: var(--primary-color);
+        }
+    }
+}
+
+.p1 {
+    padding: 1rem;
+}
+
+.bdr-top {
+    border-top: 1px solid var(--icon-color);
+}
+
+.h237 {
+    min-height: 237px;
+}
+
+.login-form div span.py108 {
+    padding-top: 10px;
+    padding-bottom: 8px;
+}
+
+.login-form span {
+    text-align: left;
+    font: normal normal 900 18px/20px Lato;
+    letter-spacing: 0px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    opacity: 1;
+}
+
+.style-none {
+    list-style: none;
+    text-decoration: none;
+}
+
+.forgot-password-link {
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    color: black;
+}
+
+.form-group label {
+    text-align: left;
+    font: normal normal 800 19px/20px Lato;
+    letter-spacing: 0px;
+    color: var(--form-label);
+    opacity: 1;
+}
+
+.form-group small {
+    text-align: left;
+    font: normal normal 13px Lato-Regular;
+    letter-spacing: 0px;
+    color: var(--gray-dark-color);
+    opacity: 1;
+}
+
+#login-btn {
+    width: 181px;
+    height: 61px;
+    border: none;
+    border-radius: 0px;
+    background: var(--primary-color) 0% 0% no-repeat padding-box;
+    text-align: center;
+    letter-spacing: 1.6px;
+    color: var(--white-color);
+    text-transform: uppercase;
+    opacity: 1;
+    outline: none;
+    box-shadow: none !important;
+}
+
+.register span {
+    text-align: left;
+    font: normal normal 900 18px/20px Lato;
+    letter-spacing: 0px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    opacity: 1;
+}
+
+.register p {
+    text-align: left;
+    font: normal normal normal 20px/30px Lato;
+    letter-spacing: 0px;
+    color: var(--font-basic-color);
+    opacity: 1;
+}
+
+a.style-none.color-white:hover {
+    color: var(--white-color);
+}
+
+a.style-none.primary-color:hover {
+    color: var(--primary-color);
+}
+
+#signUp-btn {
+    width: 181px;
+    height: 61px;
+    border: 1px solid var(--border-red);
+    border-radius: 0px;
+    background: var(--white-color) 0% 0% no-repeat padding-box;
+    text-align: center;
+    letter-spacing: 1.6px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    opacity: 1;
+    outline: none;
+    box-shadow: none !important;
+}
+
+input {
+    height: 60px;
+    background: var(--background-light) 0% 0% no-repeat padding-box;
+    border: 1px solid var(--gray-background) !important;
+    border-radius: 3px;
+    opacity: 1;
+    outline: none;
+    box-shadow: none !important;
+}
+
+input:focus {
+    background: var(--background-light) 0% 0% no-repeat padding-box;
+}
+
+.btn-register {
+    background-color: var(--white-color);
+    color: var(--primary-color);
+    border: var(--border-red) 1px solid;
+}
+
+.devided-border {
+    background: var(--icon-color);
+    height: 100%;
+    width: 1px;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 100%;
+    position: relative;
+}
+
+.devided-border::after {
+    content: "oder";
+    background-color: var(--primary-color);
+    width: 46px;
+    height: 46px;
+    border-radius: 100rem;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.account-btn {
+    margin-top: 20px;
+}
+
+@media (max-width:992px) {
+    .devided-border {
+        margin: 20px auto;
+        height: 1px;
+        width: 100%;
+    }
+
+    .account-btn {
+        margin-top: 20px;
+    }
+
+    .modal-body {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+
+    .container-fluid.login {
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+    }
+
+    .register .p1 {
+        padding: 0px !important;
+    }
+}
+
+.p-text {
+    margin-bottom: 2.8rem;
+}
+
+@media screen and (min-width:992px) and (max-width:1199px) {
+    .register p {
+        font-size: 18px !important;
+    }
+}
+
+@media (max-width:480px) {
+
+    #login-btn,
+    #signUp-btn {
+        width: 100%;
+    }
+
+    .account-btn {
+        margin-bottom: 20px;
+    }
+}

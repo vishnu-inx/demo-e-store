@@ -1,0 +1,77 @@
+<div class="container-fluid login  p-lg-5">
+    <div class="d-flex justify-content-center mt-3">
+        <img src="assets/imgs/fakery-logo-fake.png" alt="" height="63.2px" role="button" [routerLink]="['/home']">
+    </div>
+    <div class="d-flex justify-content-center mt-3 login-register-text">
+        <p class="text-center">
+            <span>Register below</span>
+        </p>
+    </div>
+    <div class="container">
+        <div class="row bdr-top">
+            <div class="col-lg-5 login-form">
+                <div class="d-flex flex-column mt-4">
+                    <span class="py108">ARE YOU ALREADY A CUSTOMER?</span>
+                </div>
+                <div class="d-flex flex-column mt-4 h237">
+                    <form [formGroup]="loginForm" novalidate="">
+                        <div class="form-group">
+                            <label for="email">E-Mail Address</label>
+                            <input type="email" class="form-control" id="email" name="email" formControlName="email"
+                                placeholder="E-Mail Address" required>
+                            <div *ngIf="f['email'].touched && f['email'].errors">
+                                <div *ngIf="f['email'].errors['required']" class="text text-danger">Email is required</div>
+                                <div *ngIf="f['email'].errors?.['email']" class="text text-danger">
+                                    E-mail address is not correct
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="Password" placeholder="Password" formControlName="password"
+                                required>
+                            <div *ngIf="f['password'].touched && f['password'].errors">
+                                <div *ngIf="f['password'].errors['required']" class="text text-danger">Password is required</div>
+                            </div>
+                        
+                            <small class="form-text text-muted"><a class="forgot-password-link" href="#" target="_blank">Forgot
+                                    Password?</a>
+                            </small> 
+                        </div>
+                        <div class="text-center account-btn mt-md">
+                            <button id="login-btn" class="btn btn-primary" (click)="login()">
+                                LOGIN
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-1 mt-5 mb-3 my-lg-0">
+                <div class="devided-border">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="d-flex flex-column mt-3 register h237">
+                    <div class="p1">
+                        <span>ARE YOU A NEW CUSTOMER?</span>
+                    </div>
+                    <div class="p1">
+                        <p class="p-text">
+                            Secure your benefits: <br><br>
+                            - In 2 minutes to your special conditions <br>
+                            - Fast to all delivery notes <br>
+                            - From CHF 350.- free delivery <br>
+                        </p>
+                    </div>
+                </div>
+                <div class="text-center account-btn">
+                    <button id="signUp-btn" type="submit" class="btn btn-primary btn-register">
+                        <a class="style-none primary-color latob"
+                            routerLink="/auth/sign-up"><strong>SIGN UP</strong>
+                        </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

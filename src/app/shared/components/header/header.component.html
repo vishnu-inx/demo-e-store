@@ -1,0 +1,46 @@
+<header>
+	<div class="fixed-headaer">
+		<div class="top-section py-2 px140 pr49">
+			<ul class="nav1 w-100 no-style">
+				<li class="logo-li">
+					<img src="assets/imgs/fakery-logo-fake.png" class="logo-img" alt="logo" routerLink="/home">
+				</li>
+				<div class="row-flex toggle-icons">
+					<li class="mr-2">
+						<a class="row-start no-style basic-clr nav1-links cursor-pointer">
+							<img src="assets/imgs/headphone.png" class="height30" alt="icon">
+							<div class="col-center px-2">
+								<span class="support8">We are glad to be here for you.</span>
+								<span class="primary12">+12 12 234 57 78</span>
+							</div>
+						</a>
+					</li>
+					<li class="mr-2">
+						<a class="row-start no-style basic-clr nav1-links cursor-pointer" [routerLink]="['/auth/login/']">
+							<img src="assets/imgs/user.png" class="height30" alt="icon">
+							<div class="col-center cursor-pointer">
+								<div class="col-center px-2">
+									<span class="support">My Account</span>
+									<span class="primary12">Hello</span>
+								</div>
+							</div>
+						</a>
+					</li>
+				</div>
+			</ul>
+		</div>
+		<div class="nav-section px140">
+			<ul class="w-100 nav-main no-style nav justify-content-between">
+				<div class="nav-main">
+					<li *ngFor="let menu of menuHeaders; let i = index">						
+						<a  style="color: white; cursor: pointer;" class="no-style nav-main-link text-uppercase ml-xl-3 ml-2 w100" [routerLinkActive]="'active'"
+							>{{menuHeaders[i]}}
+                        </a>
+					</li>
+				</div>
+            </ul>
+		</div>
+    </div>
+</header>
+
+

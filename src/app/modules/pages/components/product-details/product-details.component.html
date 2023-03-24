@@ -1,0 +1,74 @@
+<div class="flex-row">
+    <div class="container-fluid pb-5 px-3 px-md-5" *ngIf="productDetail">
+        <div class="row pt-lg-5">
+            <div class="col-md-12 col-xl-6 mt-1 col-12">
+                <div class="bdr-btm-primary text-center main_view">
+                    <img *ngIf="imageSrc === null" class="product-img" src="assets/imgs/no_preview.png" alt="" />
+                    <img *ngIf="imageSrc" src="{{imageSrc}}" id="main" class="product-img" alt="" />
+                </div>
+            </div>
+
+            <div class="col-md-12 col-xl-6 col-12">
+                <div class="mx-3 mt-3">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-space">
+                                <h2 class="prod-name">{{ productDetail?.title }}</h2>
+                                <span class="price text-right">
+                                    {{productDetail?.price}}.<sup class="size20">00</sup>
+                                    <span class="size20">CHF</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-8">
+                            <span class="lato-reg18 gray-txt">{{ productDetail?.description }}</span>
+                        </div>
+
+                        <div class="col-md-8 mt-3">
+                            <span class="lato-reg18 gray-txt">{{ productDetail?.brand }}</span>
+                        </div>
+
+                        <div class="col-md-8 mt-3">
+                            <span class="lato-reg18 gray-txt">{{ productDetail?.category }}</span>
+                        </div>
+
+                        <div class="col-md-8 mt-3">
+                            <span class="lato-reg18 gray-txt">{{ productDetail?.rating }}</span>
+                        </div>
+
+                        <div class="col-md-12 mt-4">
+                            <div class="row align-items-sm-center text-sm-center justify-content-between">              
+                              <div class="col-md-4 col-sm-4 mt-3 mr-10">              
+                                <div class="d-flex">
+                                  <div class="plus-minus col-center user-select-none" (click)="minus()">
+                                    <i i-bs name="dash-lg" class="" height="25px" width="25px"></i>
+                                  </div>
+                                  <div class="quantity">
+                                    <input type="number" [(ngModel)]="quantity" value="{{ quantity }}" readonly />
+                                  </div>
+                                  <div class="plus-minus col-center user-select-none" (click)="plus()">
+                                    <i i-bs name="plus" class="" height="25px" width="25px"></i>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-7 mt-3 px-0">
+                                <a class="in-cart">
+                                  <div class="cart">
+                                    <img src="assets/imgs/cart_white.png" alt="" />
+                                  </div>
+                                  <div class="in-the-cart pl-4">Add to Cart</div>
+                                </a>
+                                <!-- <a class="in-cart-login-btn" *ngIf="this.authService.isLoggedIn() === false" [routerLink]="['/login']">
+                                  <div class="login-btn"><img src="assets/imgs/white-user-icon.png" class="height30" alt="icon"> Sign up </div>
+                                </a> -->
+                              </div>
+                            </div>
+                          </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
