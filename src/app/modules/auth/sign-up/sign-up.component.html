@@ -1,1 +1,165 @@
-<p>sign-up works!</p>
+<div class="container-fluid x-scroll-disabled px-0">
+    <div class="container-fluid pb-5 px75 latob">
+        <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+            <h1 class="pt-5 basic-color font-35 w-100 bdr-btm-primary">Open an account</h1>
+            <div class="row">
+                <div class="col-md-5">
+                    <h2 class="font17 pt-4">
+                        Account Information
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-7 col-lg-10 col-md-10">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h3 class="font14 pt-3">E-Mail Address:</h3>
+                            <div>
+                                <input class=" p-3 form-input" type="email" formControlName="email"
+                                    placeholder="E-Mail Address"
+                                    [ngClass]="{ 'is-invalid': submitted && getControl['email'].errors }">
+                            </div>
+                            <div *ngIf="getControl['email'].touched && getControl['email'].invalid || submitted && getControl['email'].errors"
+                                class="text-danger">
+                                <div *ngIf="getControl['email'].errors?.['required']">E-Mail is required</div>
+                                <div *ngIf="getControl['email'].errors?.['email']">E-Mail is invalid</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <h3 class="font14 pt-3">Password:</h3>
+                            <div>
+                                <input class=" p-3 form-input" type="password" formControlName="password"
+                                    placeholder="Password"
+                                    [ngClass]="{ 'is-invalid': submitted && getControl['password'].errors }">
+                            </div>
+                            <div *ngIf="getControl['password'].touched && getControl['password'].invalid || submitted && getControl['password'].errors"
+                                class="text-danger">
+                                <div *ngIf="getControl['password'].errors?.['required']">Password is required</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <h3 class="font14 pt-3">Confirm password:</h3>
+                            <div>
+                                <input class=" p-3 form-input" type="password" formControlName="confirmPassword"
+                                    placeholder="Confirm password"
+                                    [ngClass]="{ 'is-invalid': submitted && getControl['confirmPassword'].errors }">
+                            </div>
+                            <div *ngIf="getControl['confirmPassword'].touched && getControl['confirmPassword'].invalid || submitted && getControl['confirmPassword'].errors"
+                                class="text-danger">
+                                <div *ngIf="getControl['confirmPassword'].errors?.['required']">Confirm password is
+                                    required</div>
+                                <div *ngIf="getControl['confirmPassword'].errors?.['matching']"> Confirm password does
+                                    not match</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-7 col-lg-10 col-md-10">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h3 class="font14 pt-3">Gender:</h3>
+                            <div class="mt-3 d-flex justify-content-start">
+                                <input class="regular-radio" id="male" type="radio" value="male" name="gender"
+                                    formControlName="gender">
+                                <label class="lator font14 radio-lable" for="male">Male</label>
+                                <input id="female" type="radio" value="female" name="gender" class="regular-radio"
+                                    formControlName="gender">
+                                <label class="lator font14 radio-lable" for="female">Female</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <h3 class="font14 pt-3">First name:</h3>
+                            <div>
+                                <input class=" p-3 form-input" type="text" name="firstName" formControlName="fname"
+                                    placeholder="First name"
+                                    [ngClass]="{ 'is-invalid': submitted && getControl['fname'].errors }">
+                            </div>
+                            <div *ngIf="getControl['fname'].touched && getControl['fname'].invalid || submitted && getControl['fname'].errors"
+                                class="text-danger">
+                                <div *ngIf="getControl['fname'].errors?.['required']">First name is required</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <h3 class="font14 pt-3">Last name:</h3>
+                            <div>
+                                <input class=" p-3 form-input" type="text" name="lastName" formControlName="lname"
+                                    placeholder="Last name"
+                                    [ngClass]="{ 'is-invalid': submitted && getControl['lname'].errors }">
+                            </div>
+                            <div *ngIf="getControl['lname'].touched && getControl['lname'].invalid || submitted && getControl['lname'].errors"
+                                class="text-danger">
+                                <div *ngIf="getControl['lname'].errors?.['required']">Last name is reqauired</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-7 col-lg-10 col-md-10">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h3 class="font14 pt-3">Address:</h3>
+                            <div>
+                                <input class=" p-3 form-input" type="text" name="street" formControlName="street"
+                                    placeholder="Address"
+                                    [ngClass]="{ 'is-invalid': submitted && getControl['street'].errors }">
+                            </div>
+                            <div *ngIf="getControl['street'].touched && getControl['street'].invalid || submitted && getControl['street'].errors"
+                                class="text-danger">
+                                <div *ngIf="getControl['street'].errors?.['required']">Address is required</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <h3 class="font14 pt-3">Postal code:</h3>
+                            <div>
+                                <input class=" p-3 form-input" type="text" name="Postcode" formControlName="pincode"
+                                    placeholder="Postal code"
+                                    [ngClass]="{ 'is-invalid': submitted && getControl['pincode'].errors }">
+                            </div>
+                            <div *ngIf="getControl['pincode'].touched && getControl['pincode'].invalid || submitted && getControl['pincode'].errors"
+                                class="text-danger">
+                                <div *ngIf="getControl['pincode'].errors?.['required']">PIN-Code is required</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <h3 class="font14 pt-3">City:</h3>
+                            <div>
+                                <input class=" p-3 form-input" type="text" name="City" formControlName="city"
+                                    placeholder="City"
+                                    [ngClass]="{ 'is-invalid': submitted && getControl['city'].errors }">
+                            </div>
+                            <div *ngIf="getControl['city'].touched && getControl['city'].invalid || submitted && getControl['city'].errors"
+                                class="text-danger">
+                                <div *ngIf="getControl['city'].errors?.['required']">City name is required</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <h3 class="font14 pt-3">Phone:</h3>
+                            <div>
+                                <input class=" p-3 form-input" type="text" name="phone" formControlName="phone"
+                                    placeholder="Phone"
+                                    [ngClass]="{ 'is-invalid': submitted && getControl['phone'].errors }">
+                            </div>
+                            <div *ngIf="getControl['phone'].touched && getControl['phone'].invalid || submitted && getControl['phone'].errors"
+                                class="text-danger">
+                                <div *ngIf="getControl['phone'].errors?.['required']">Phone number is requred</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 p-3 text-left">
+                    <button class="btn-register p-3" [ngClass]="isLoading ? 'btn-register-load': ''"
+                        [disabled]="isLoading" type="submit">
+                        <a class="no-style">
+                            <i class="fa" [ngClass]="{'fa-spin fa-spinner': isLoading}"></i>
+                            SUBMIT</a>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
