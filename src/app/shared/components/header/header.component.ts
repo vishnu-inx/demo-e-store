@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GeneralService, StorageService, AuthService } from 'src/app/core/services';
 
 @Component({
     selector: 'app-header',
@@ -8,10 +9,21 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
     menuHeaders = ["home", "about-us", "contact-us"];
+    user: any;
 
-    constructor() { }
+    constructor(
+        private generalService: GeneralService,
+        public storageService: StorageService,
+        private authService : AuthService
+    ) {
+
+    }
 
     ngOnInit(): void {
+    }
+
+    logout() {
+        this.authService.logout();
     }
 
 }

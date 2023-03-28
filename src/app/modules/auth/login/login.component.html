@@ -1,6 +1,6 @@
-<div class="container-fluid login  p-lg-5">
+<div class="container-fluid login  p-lg-1">
     <div class="d-flex justify-content-center mt-3">
-        <img src="assets/imgs/fakery-logo-fake.png" alt="" height="63.2px" role="button" [routerLink]="['/home']">
+        <img src="assets/imgs/fakery-logo-fake.png" alt="" height="35px" role="button" [routerLink]="['/home']">
     </div>
     <div class="d-flex justify-content-center mt-3 login-register-text">
         <p class="text-center">
@@ -14,7 +14,7 @@
                     <span class="py108">ARE YOU ALREADY A CUSTOMER?</span>
                 </div>
                 <div class="d-flex flex-column mt-4 h237">
-                    <form [formGroup]="loginForm" novalidate="">
+                    <form [formGroup]="loginForm">
                         <div class="form-group">
                             <label for="email">E-Mail Address</label>
                             <input type="email" class="form-control" id="email" name="email" formControlName="email"
@@ -34,14 +34,12 @@
                                 <div *ngIf="f['password'].errors['required']" class="text text-danger">Password is required</div>
                             </div>
                         
-                            <small class="form-text text-muted"><a class="forgot-password-link" href="#" target="_blank">Forgot
+                            <small class="form-text text-muted mt-3"><a class="forgot-password-link" href="#" target="_blank">Forgot
                                     Password?</a>
                             </small> 
                         </div>
-                        <div class="text-center account-btn mt-md">
-                            <button id="login-btn" class="btn btn-primary" (click)="login()">
-                                LOGIN
-                            </button>
+                        <div class="text-center account-btn mt-md" (click)="login()">
+                            <button id="login-btn" class="btn btn-primary">LOGIN</button>
                         </div>
                     </form>
                 </div>
@@ -64,11 +62,9 @@
                         </p>
                     </div>
                 </div>
-                <div class="text-center account-btn">
-                    <button id="signUp-btn" type="submit" class="btn btn-primary btn-register">
-                        <a class="style-none primary-color latob"
-                            routerLink="/auth/sign-up"><strong>SIGN UP</strong>
-                        </a>
+                <div class="text-center account-btn mb-3">
+                    <button routerLink="/auth/sign-up" id="signUp-btn" type="submit" class="btn btn-primary btn-register">
+                        <a class="style-none primary-color latob"><strong>SIGN UP</strong></a>
                     </button>
                 </div>
             </div>

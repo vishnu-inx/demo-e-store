@@ -110,6 +110,8 @@ input[type=checkbox]:focus-visible {
     letter-spacing: 1.6px;
     text-transform: uppercase;
     border: none;
+    width: 200px;
+    cursor: pointer !important;
 
     a.no-style {
         list-style: none;
@@ -128,3 +130,4 @@ input[type=checkbox]:focus-visible {
         width: 100%;
     }
 }
+

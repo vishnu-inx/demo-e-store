@@ -143,6 +143,7 @@ input:focus {
     background-color: var(--white-color);
     color: var(--primary-color);
     border: var(--border-red) 1px solid;
+    margin-top: 12px;
 }
 
 .devided-border {
@@ -156,7 +157,7 @@ input:focus {
 }
 
 .devided-border::after {
-    content: "oder";
+    content: "or";
     background-color: var(--primary-color);
     width: 46px;
     height: 46px;
@@ -175,11 +176,16 @@ input:focus {
     margin-top: 20px;
 }
 
-@media (max-width:992px) {
+@media (max-width:991px) {
     .devided-border {
         margin: 20px auto;
         height: 1px;
         width: 100%;
+    }
+
+    #login-btn,
+    #signUp-btn {
+        width: 60%;
     }
 
     .account-btn {

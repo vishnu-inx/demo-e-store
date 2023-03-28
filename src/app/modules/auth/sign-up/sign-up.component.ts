@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators, } from '@angular/forms';
 import { Router } from '@angular/router';
 import Validation from 'src/app/shared/utils/validation';
+import { AuthService } from 'src/app/core/services';
+import ShortUniqueId from 'short-unique-id';
 
 @Component({
     selector: 'app-sign-up',
@@ -13,10 +15,12 @@ export class SignUpComponent implements OnInit {
     submitted = false;
     isLoading = false;
     remarks = '';
+    uid = new ShortUniqueId({ length: 5 });
 
     constructor(
         public formBuilder: FormBuilder,
         private router: Router,
+        private auth: AuthService
     ) {
         this.signUpForm = this.formBuilder.group(
             {
@@ -26,9 +30,7 @@ export class SignUpComponent implements OnInit {
                 gender: ['male'],
                 fname: ['', [Validators.required]],
                 lname: ['', [Validators.required]],
-                street: ['', [Validators.required]],
-                pincode: ['', [Validators.required]],
-                city: ['', [Validators.required]],
+                address: ['', [Validators.required]],
                 phone: ['', [Validators.required]],
             },
             {
@@ -37,8 +39,7 @@ export class SignUpComponent implements OnInit {
         );
     }
 
-    ngOnInit(): void {
-    }
+    ngOnInit(): void {}
 
     get getControl(): { [key: string]: AbstractControl } {
         return this.signUpForm.controls;
@@ -51,17 +52,20 @@ export class SignUpComponent implements OnInit {
         }
 
         const payload = {
+            id: this.uid(),
             firstName: this.signUpForm.value.fname,
             lastName: this.signUpForm.value.lname,
             email: this.signUpForm.value.email,
             gender: this.signUpForm.value.gender,
             phone: this.signUpForm.value.phone,
-            address: this.signUpForm.value.street,
-            city: this.signUpForm.value.city,
-            pincode: this.signUpForm.value.pincode,
+            address: this.signUpForm.value.address,
+            password: this.signUpForm.value.password
         }
 
-        console.log(payload);
+        this.auth.signUp(payload).subscribe((res: any) => {
+            this.signUpForm.reset();
+            this.router.navigate(['/auth/login']);
+        })
 
     }
 

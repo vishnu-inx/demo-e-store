@@ -1,4 +1,36 @@
 {
+  "signup": [
+    {
+      "id": "1",
+      "firstName": "Jack",
+      "lastName": "Davis",
+      "email": "jack09@mailinator.com",
+      "gender": "Male",
+      "phone": "0123464789",
+      "address": "800 NW Ave, Florida",
+      "password": "12345"
+    },
+    {
+      "id": "2",
+      "firstName": "Nick",
+      "lastName": "Anderson",
+      "email": "nick777@mailinator.com",
+      "gender": "Male",
+      "phone": "0123456789",
+      "address": "38# Hwy N, Newyork",
+      "password": "12345"
+    },
+    {
+      "id": "pL1oW",
+      "firstName": "karan",
+      "lastName": "panchal",
+      "email": "karan000@mailinator.com",
+      "gender": "male",
+      "phone": "0123456789",
+      "address": "Ranip Ahmedabad Gujarat India 380061",
+      "password": "12345"
+    }
+  ],
   "products": [
     {
       "id": 1,
@@ -1839,15 +1871,5 @@
         "https://i.dummyjson.com/data/products/100/thumbnail.jpg"
       ]
     }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
