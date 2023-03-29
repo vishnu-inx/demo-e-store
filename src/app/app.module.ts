@@ -7,6 +7,8 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { FooterComponent } from './shared/components/footer/footer.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -14,6 +16,7 @@ import { ToastrModule } from 'ngx-toastr';
     declarations: [
         AppComponent,
         HeaderComponent,
+        FooterComponent,
     ],
     imports: [
         BrowserModule,
@@ -26,6 +29,7 @@ import { ToastrModule } from 'ngx-toastr';
             positionClass: 'toast-top-right',
             preventDuplicates: true,
           }),
+        FormsModule
     ],
     providers: [],
     bootstrap: [AppComponent]

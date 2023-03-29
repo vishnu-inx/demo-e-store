@@ -208,6 +208,17 @@ button[disabled]{
     .btn-save {
         width: 100%;
     }
+
+    .change-pass-form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .change-pass-form-field {
+        max-width: 100% !important;
+    }
 }
 
 @media (max-width:375px) {

@@ -17,5 +17,9 @@ export class ProductService {
         return this.http.get(`http://localhost:3000/products/${id}`);
     }
 
+    searchProduct(search: any): Observable<any> {
+        return this.http.get(`http://localhost:3000/products?q=${search}`);
+    }
+
 
 }
