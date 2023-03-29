@@ -100,6 +100,10 @@
   --red: #fc0302;
 }
 
+button {
+  cursor: pointer !important;
+}
+
 ol,
 ul,
 dl {
@@ -515,7 +519,9 @@ pre {
   }
 }
 
-button:focus {outline:0 !important;}
+button:focus {
+  outline: 0 !important;
+}
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';

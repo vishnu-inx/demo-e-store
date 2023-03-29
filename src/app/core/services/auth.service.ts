@@ -23,6 +23,10 @@ export class AuthService {
         return this.http.post(`http://localhost:3000/signup`, payload);
     }
 
+    updateProfile(payload: any, id: string): Observable<any> {
+        return this.http.put(`http://localhost:3000/signup/${id}/`, payload);
+    }
+
     logout() {
         this.storageService.clearCookie();
         this.router.navigate(['/']);

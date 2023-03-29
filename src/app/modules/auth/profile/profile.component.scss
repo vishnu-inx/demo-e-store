@@ -1,0 +1,222 @@
+.open-account {
+    font-size: 35px;
+}
+
+.font17 {
+    font-size: 17px;
+    color: var(--form-label);
+}
+
+.font14 {
+    font-size: 14px;
+    color: var(--form-label);
+}
+
+.gray {
+    color: var(--gray-text);
+}
+
+.pencil-box {
+    border: 1px solid var(--gray-text);
+    color: var(--gray-text);
+    border-radius: 6px;
+    width: 34px;
+    height: 35px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2.font17::after {
+    content: "";
+    background: var(--icon-color);
+    width: 97%;
+    height: 1.2px;
+    position: absolute;
+    left: 12px;
+    bottom: 0px;
+}
+
+.regular-radio {
+    display: none;
+}
+
+.regular-radio:checked+label:before {
+    background-color: var(--gray-dark-color);
+}
+
+.regular-radio:focus+label:before {
+    background-color: var(--gray-dark-color);
+}
+
+.regular-radio+label:before {
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50em;
+    top: 0px;
+    left: -7px;
+    position: relative;
+    background-color: var(--white-color);
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 1px solid var(--gray-dark-color);
+}
+
+label {
+    display: inline;
+    position: relative;
+}
+
+#dropdownBasic1 {
+    text-align: left;
+    background-color: var(--white-color);
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.radio-lable {
+    vertical-align: middle;
+    display: inline;
+    padding-left: 3rem;
+}
+
+.bg-white {
+    background-color: var(--white-color) !important;
+}
+
+.form-checkbox {
+    height: 18px;
+    width: 18px;
+    vertical-align: text-bottom;
+    margin-right: 16px;
+    border: 1px solid var(--gray-dark-color);
+}
+
+.form-input {
+    color: var(--gray-dark-color);
+    background-color: var(--background-light);
+    border: 1px solid var(--gray-background);
+    border-radius: 3px;
+    letter-spacing: 0px;
+    font-family: LatoRegular;
+    font-size: 13px;
+    width: 100%;
+}
+
+input[type=checkbox]:focus-visible {
+    outline: none;
+    border: 1px solid var(--primary-color);
+}
+
+.form-input:focus-visible {
+    outline: none;
+    border: 1px solid var(--primary-color);
+}
+
+.btn-save {
+    background-color: var(--primary-color);
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    border: none;
+
+    a.no-style {
+        list-style: none;
+        text-decoration: none;
+        color: var(--white-color);
+    }
+}
+
+button:disabled,
+button[disabled]{
+  background-color: #e15e63;
+  cursor: not-allowed !important;
+}
+
+.btn-changepassword {
+    background-color: var(--primary-color);
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    border: none;
+    padding: 1rem;
+    margin-top: 20px;
+
+    a.no-style {
+        list-style: none;
+        text-decoration: none;
+        color: var(--white-color);
+    }
+}
+
+.max399 {
+    max-width: 399px;
+    width: 100%;
+    position: absolute;
+    right: 30px;
+    top: 10px;
+}
+
+.text-over {
+    font-family: LatoBlack;
+    font-size: clamp(1.5rem, 2.5vw, 3.125rem);
+    position: absolute;
+    bottom: 15px;
+    left: 0px;
+    line-height: clamp(1.5rem, 2.5vw, 2.5rem);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.primary-bg {
+    background-color: var(--primary-color);
+    font-size: clamp(0.5rem, 2.5vw, 1rem);
+    padding: 10px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    line-height: 16px;
+}
+
+.btn-save-load {
+    background-color: rgb(248, 187, 187);
+}
+
+.font58 {
+    font-size: 58px;
+}
+
+@media (max-width:1250px) {
+    .max399 {
+        position: relative;
+        top: 18px;
+        right: 0px;
+        left: 10px;
+    }
+}
+
+@media (max-width:480px) {
+
+    .btn-changepassword,
+    .btn-save {
+        width: 100%;
+    }
+}
+
+@media (max-width:375px) {
+    .text-over {
+        max-width: 140px;
+        bottom: 5px;
+    }
+
+    .font58 {
+        font-size: 30px;
+    }
+}

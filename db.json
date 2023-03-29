@@ -2,7 +2,7 @@
   "signup": [
     {
       "id": "1",
-      "firstName": "Jack",
+      "firstName": "Jackson",
       "lastName": "Davis",
       "email": "jack09@mailinator.com",
       "gender": "Male",
@@ -22,13 +22,12 @@
     },
     {
       "id": "pL1oW",
-      "firstName": "karan",
-      "lastName": "panchal",
-      "email": "karan000@mailinator.com",
+      "firstName": "Karan",
+      "lastName": "Panchal",
+      "email": "karan123@mailinator.com",
       "gender": "male",
       "phone": "0123456789",
-      "address": "Ranip Ahmedabad Gujarat India 380061",
-      "password": "12345"
+      "address": "Ranip Ahmedabad Gujarat India 380061"
     }
   ],
   "products": [

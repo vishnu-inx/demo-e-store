@@ -1,0 +1,158 @@
+<div class="container-fluid x-scroll-disabled px-0">
+    <div class="flex-row">
+        <div class="container-fluid pb-5 px75 latob" style="max-width: 1300px;">
+            <div class="row">
+                <div class="col-xl-6 col-md-12">
+                    <h2 class="pt-md-5 pt-3 basic-color font24 lator w-100">User Profile</h2>
+                    <p class="lator gray font14">Here you can find everything about your profile in one place. update
+                        your profile.</p>
+                </div>
+            </div>
+
+            <form [formGroup]="profileForm" (ngSubmit)="updateProfile()">
+                <div class="row">
+                    <div class="col-xl-8 col-lg-10 col-md-10">
+                        <h2 class="font17 latob pt-4">
+                            Update your profile
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 col-6">
+                        <h3 class="font14 pt-3">First name:</h3>
+                        <div>
+                            <input class=" p-3 form-input" type="text" name="firstName" formControlName="fname"
+                                placeholder="First name"
+                                [ngClass]="{ 'is-invalid': submitted && getControl['fname'].errors }">
+                        </div>
+                        <div *ngIf="getControl['fname'].touched && getControl['fname'].invalid || submitted && getControl['fname'].errors"
+                            class="text-danger">
+                            <div *ngIf="getControl['fname'].errors?.['required']">First name is required</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-6">
+                        <h3 class="font14 pt-3">Last name:</h3>
+                        <div>
+                            <input class=" p-3 form-input" type="text" name="lastName" formControlName="lname"
+                                placeholder="Last name"
+                                [ngClass]="{ 'is-invalid': submitted && getControl['lname'].errors }">
+                        </div>
+                        <div *ngIf="getControl['lname'].touched && getControl['lname'].invalid || submitted && getControl['lname'].errors"
+                            class="text-danger">
+                            <div *ngIf="getControl['lname'].errors?.['required']">Last name is reqauired</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 col-6">
+                        <h3 class="font14 pt-3">E-Mail Address:</h3>
+                        <div>
+                            <input class=" p-3 form-input" type="email" formControlName="email"
+                                placeholder="E-Mail Address"
+                                [ngClass]="{ 'is-invalid': submitted && getControl['email'].errors }">
+                        </div>
+                        <div *ngIf="getControl['email'].touched && getControl['email'].invalid || submitted && getControl['email'].errors"
+                            class="text-danger">
+                            <div *ngIf="getControl['email'].errors?.['required']">E-Mail is required</div>
+                            <div *ngIf="getControl['email'].errors?.['email']">E-Mail is invalid</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-6">
+                        <h3 class="font14 pt-3">Phone:</h3>
+                        <div>
+                            <input class=" p-3 form-input" type="text" name="phone" formControlName="phone"
+                                placeholder="Phone"
+                                [ngClass]="{ 'is-invalid': submitted && getControl['phone'].errors }">
+                        </div>
+                        <div *ngIf="getControl['phone'].touched && getControl['phone'].invalid || submitted && getControl['phone'].errors"
+                            class="text-danger">
+                            <div *ngIf="getControl['phone'].errors?.['required']">Phone number is requred</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-12">
+                        <h3 class="font14 pt-3">Address:</h3>
+                        <div>
+                            <input class=" p-3 form-input" type="text" name="address" formControlName="address"
+                                placeholder="Address"
+                                [ngClass]="{ 'is-invalid': submitted && getControl['address'].errors }">
+                        </div>
+                        <div *ngIf="getControl['address'].touched && getControl['address'].invalid || submitted && getControl['address'].errors"
+                            class="text-danger">
+                            <div *ngIf="getControl['address'].errors?.['required']">Address is required</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-12 p-3 text-left">
+                        <button id="save" class="btn-save p-3" type="submit" [disabled]="!(profileForm.touched && profileForm.valid)">
+                            <i class="fa" [ngClass]="{'fa-spin fa-spinner': isLoading}"></i>
+                            UPDATE PROFILE
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Update password -->
+            <form [formGroup]="changePasswordForm" (ngSubmit)="changePassword()">
+                <div class="row">
+                    <div class="col-xl-8 col-lg-10 col-md-10">
+                        <h2 class="font17 latob pt-4 pb-2">
+                            Change password
+                        </h2>
+                    </div>
+                </div>
+               
+                <div class="row">
+                    <div class="col-md-4 col-4">
+                        <h3 class="font14 latob pt-3">Old Password:</h3>
+                        <div>
+                            <input class="p-3 form-input" formControlName="oldpassword" placeholder="Old Password" type="password" required>
+                        </div>
+                        <div *ngIf="getChangePassControl['oldpassword'].touched && getChangePassControl['oldpassword'].errors">
+                            <div *ngIf="getChangePassControl['oldpassword'].errors['required']" class="text text-danger">Old password is required</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-4">
+                        <h3 class="font14 latob pt-3">New password:</h3>
+                        <div>
+                            <input class="p-3 form-input" formControlName="newpassword" placeholder="New password" type="password" required>
+                        </div>
+                        <div *ngIf="getChangePassControl['newpassword'].touched && getChangePassControl['newpassword'].errors">
+                            <div *ngIf="getChangePassControl['newpassword'].errors['required']" class="text text-danger">New password is required</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-4">
+                        <h3 class="font14 latob pt-3">Confirm password:</h3>
+                        <div>
+                            <input class="p-3 form-input" formControlName="confirmPassword" placeholder="Confirm new password" type="password" required>
+                        </div>
+                        <div *ngIf="getChangePassControl['confirmPassword'].touched && getChangePassControl['confirmPassword'].errors"
+                            class="text-danger">
+                            <div *ngIf="getChangePassControl['confirmPassword'].errors?.['required']">Confirm password is
+                                required</div>
+                            <div *ngIf="getChangePassControl['confirmPassword'].errors?.['matching']"> Confirm password does
+                                not match</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 p-3 text-left">
+                        <button class="btn-changepassword" [ngClass]="loading ? 'btn-save-load': ''" [disabled]="loading"><i
+                                class="fa" [ngClass]="{'fa-spin fa-spinner': loading}"></i>
+                            Update password</button>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+
+</div>

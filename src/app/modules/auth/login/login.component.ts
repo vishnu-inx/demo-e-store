@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
                 this.generalService.displaySuccess('Welcome ' + this.storageService.user());
                 this.router.navigate(['/home']);
             } else {
-                this.generalService.displayError('User not found!');
+                this.generalService.displayError('Email or Password is not correct!');
             }
         })
     }
