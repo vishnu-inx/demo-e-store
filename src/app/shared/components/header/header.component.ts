@@ -8,8 +8,23 @@ import { GeneralService, StorageService, AuthService, ProductService } from 'src
     styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
-    menuHeaders = ["home", "about-us", "contact-us"];
+    menuTitle: any = [
+        {
+            "title": "Home",
+            "icon": "fa-solid fa-house",
+            "link": "/home"
+        },
+        {
+            "title": "Electronic",
+            "icon": "fa-solid fa-mobile-screen-button",
+            "link": "/home/product-category/Electronic"
+        },
+        {
+            "title": "Other",
+            "icon": "fa-solid fa-couch",
+            "link": "/home/product-category/Other"
+        }
+    ];
     user: any;
     searchOutput: any;
     showDrop = false;

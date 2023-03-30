@@ -32,9 +32,10 @@
 		<div class="nav-section">
 			<ul class="w-100 nav-main no-style nav justify-content-between">
 				<div class="nav-main">
-					<li *ngFor="let menu of menuHeaders; let i = index">						
-						<a  style="color: white; cursor: pointer;" class="no-style nav-main-link text-uppercase ml-xl-3 ml-2 w100" [routerLinkActive]="'active'"
-							>{{menuHeaders[i]}}
+					<li *ngFor="let menu of menuTitle">						
+						<a [routerLink]="[menu.link]" (click)="refreshRoute()" style="color: white; cursor: pointer;" class="no-style nav-main-link text-uppercase ml-xl-3 ml-2 w100">
+							<i class="{{ menu.icon }}"></i>
+							<span class="menu-title"> {{ menu.title }} </span>
                         </a>
 					</li>
 				</div>

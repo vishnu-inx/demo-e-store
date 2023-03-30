@@ -15,8 +15,7 @@
                             <div class="col-space">
                                 <h2 class="prod-name">{{ productDetail?.title }}</h2>
                                 <span class="price text-right">
-                                    {{productDetail?.price}}.<sup class="size20">00</sup>
-                                    <span class="size20">CHF</span>
+                                    $ {{productDetail?.price}}.<sup class="size20">00</sup>
                                 </span>
                             </div>
                         </div>
@@ -59,13 +58,9 @@
                                   </div>
                                   <div class="in-the-cart pl-4">Add to Cart</div>
                                 </a>
-                                <!-- <a class="in-cart-login-btn" *ngIf="this.authService.isLoggedIn() === false" [routerLink]="['/login']">
-                                  <div class="login-btn"><img src="assets/imgs/white-user-icon.png" class="height30" alt="icon"> Sign up </div>
-                                </a> -->
                               </div>
                             </div>
                           </div>
-
                     </div>
                 </div>
             </div>

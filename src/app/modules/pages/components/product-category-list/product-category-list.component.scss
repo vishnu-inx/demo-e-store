@@ -1,0 +1,207 @@
+.x-scroll-disabled {
+    overflow-x: hidden;
+  }
+  
+  .place-call {
+    text-align: center;
+    width: 100%;
+    padding: clamp(0.5rem, -0.875rem + 8.333333vw, 2.8125rem);
+    font-size: clamp(1rem, -0.875rem + 8.333333vw, 1.813rem);
+    font-family: LatoRegular;
+    color: var(--black-1c);
+    font-size: 18px;
+  }
+  
+  .product-card {
+    color: var(--primary-color);
+    height: 190px !important;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-inline: 1px;
+  
+    .product-title {
+      position: absolute;
+      top: 10px;
+      left: 25px;
+      right: 25px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+  
+      .product-name {
+        font-family: LatoBold;
+        font-size: clamp(0.9rem, 1.2vw, 1.188rem);
+      }
+    }
+  }
+  
+  .price-bottom-right {
+    position: absolute;
+    bottom: 1px;
+    right: 10px;
+  }
+  
+  .product-img {
+    height: 130px !important;
+    max-width: 100%;
+    transition: all 0.4s;
+    margin-bottom: 20px;
+  }
+  
+  .bdr1 {
+    border: 1px solid var(--gray-border);
+    border-bottom: 1px solid var(--primary-color);
+  }
+  
+  .px6 {
+    padding-inline: 6px;
+  }
+  
+  .pb13 {
+    padding-bottom: 13px;
+  }
+  
+  .height25 {
+    height: 25px;
+    width: auto;
+  }
+  
+  h2.bestProd {
+    width: 100%;
+    font-size: clamp(1.2rem, -0.875rem + 8.333333vw, 2.3125rem);
+    font-family: latoBold;
+    text-align: center;
+    margin-bottom: clamp(0.2rem, -0.875rem + 8.333333vw, 1.125rem);
+    position: relative;
+  
+    span.bestprod-text {
+      padding-inline: 20px;
+      background-color: white !important;
+      display: inline-block;
+      z-index: 0;
+    }
+  }
+  
+  h2.bestProd:after {
+    content: "";
+    background: var(--border-dark);
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+  }
+  
+  .btn-moreshows {
+    border: 1px solid var(--border-red);
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 20px 50px;
+    font-size: 16px;
+    letter-spacing: 1.6px;
+  
+    a {
+      color: white;
+    }
+  }
+  
+  .font35 {
+    font-size: clamp(1.19rem, 1.5vw, 2.1875rem);
+  }
+  
+  .product-img-hover:hover {
+    transform: scale(1.2) translateY(5px);
+  }
+  
+  .hover-div:hover {
+    .hover-drop-down {
+      height: 300px;
+      display: block;
+      background-color: white;
+      border: 1px solid var(--gray-border);
+      border-top: none;
+  
+      ul {
+        li.slideup {
+          top: 0;
+        }
+  
+        li .slideleft {
+          left: 0;
+        }
+      }
+    }
+  }
+  
+  .hover-drop-down {
+    overflow: hidden;
+    height: 0;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+    position: absolute;
+    z-index: 1;
+    background-color: var(--white-color);
+    position: absolute;
+    width: 100%;
+    margin-left: -15px;
+  
+    ul {
+      padding-inline-start: 10px;
+  
+      li.slideup {
+        transition-delay: all .3s !important;
+        transition: all .3s ease-in;
+        top: 20px;
+        position: relative;
+      }
+  
+      li .slideleft {
+        transition-delay: all .5s !important;
+        transition: all .3s ease-in;
+        left: 20px;
+        position: relative;
+      }
+    }
+  }
+  
+  .size-box {
+    border: 1px solid var(--gray-border);
+    padding: 3px 12px;
+    line-height: 2;
+  }
+  
+  .gray-text {
+    color: var(--gray-border);
+  }
+  
+  @media screen and (min-width: 768px) and (max-width: 1600px) {
+    .product-card {
+      height: 160px !important;
+    }
+  
+    .product-img {
+      height: 105px !important;
+    }
+  }
+  
+  @media screen and (min-width:768px) and (max-width:1200px) {
+    .product-name {
+      font-size: 12px;
+    }
+  }
+  
+  @media (max-width:480px) {
+    .btn-moreshows {
+      width: 100% !important;
+    }
+  }

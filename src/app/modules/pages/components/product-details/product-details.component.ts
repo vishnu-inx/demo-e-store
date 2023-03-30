@@ -30,7 +30,6 @@ export class ProductDetailsComponent implements OnInit {
         this.productService.getProduct(this.id).subscribe((data: any) => {
             this.productDetail = data;
             this.imageSrc = data.thumbnail;
-            console.log(this.productDetail);
         })
     }
 

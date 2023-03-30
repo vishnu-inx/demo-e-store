@@ -1,9 +1,9 @@
 <div class="container-fluid x-scroll-disabled" style="margin-top: 20px;">
     <h2 class="bestProd">
-        <span class="bestprod-text">PRODUCT</span>
+        <span class="bestprod-text">{{categoryId}} Products</span>
     </h2>
     <div class="row px6">
-        <div class="col-xl-3 col-lg-4 col-md-6 px6 pb13" *ngFor="let product of products | slice: 0: show">
+        <div class="col-xl-3 col-lg-4 col-md-6 px6 pb13" *ngFor="let product of products">
             <a class="link-style-none" style="cursor: pointer;" [routerLink]="['/home/product/', product.id]">
                 <div class="product-card h-100 bdr1">
                     <div class="product-title">
@@ -24,12 +24,6 @@
                     </div>
                 </div>
             </a>
-        </div>
-        <div class="col-md-12 p-2 mb-md-3 text-center">
-            <button *ngIf="this.storageService.getCookie('isLogin') && show < products.length"
-                (click)="showMoreItems()" class="btn-moreshows my-md-3 my-3">
-                SHOW MORE
-            </button>
         </div>
     </div>
 </div>

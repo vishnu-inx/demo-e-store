@@ -10,6 +10,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { FormsModule } from '@angular/forms';
 import { NgxBootstrapIconsModule, allIcons } from 'ngx-bootstrap-icons';
+import { ProductCategoryListComponent } from './components/product-category-list/product-category-list.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { NgxBootstrapIconsModule, allIcons } from 'ngx-bootstrap-icons';
         ProductUpdateComponent,
         HomeComponent,
         ProductDetailsComponent,
+        ProductCategoryListComponent,
     ],
     imports: [
         CommonModule,
