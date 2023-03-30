@@ -1,11 +1,6 @@
 <div class="container-fluid login  p-lg-1">
-    <div class="d-flex justify-content-center mt-3">
-        <img src="assets/imgs/fakery-logo-fake.png" alt="" height="35px" role="button" [routerLink]="['/home']">
-    </div>
-    <div class="d-flex justify-content-center mt-3 login-register-text">
-        <p class="text-center">
-            <span>Register below</span>
-        </p>
+    <div class="d-flex justify-content-center mt-3 mb-3">
+        <img src="assets/imgs/fakery-logo-fake.png" alt="" height="35px" [routerLink]="['/home']">
     </div>
     <div class="container">
         <div class="row bdr-top">
@@ -34,8 +29,8 @@
                                 <div *ngIf="f['password'].errors['required']" class="text text-danger">Password is required</div>
                             </div>
                         
-                            <small class="form-text text-muted mt-3"><a class="forgot-password-link" href="#" target="_blank">Forgot
-                                    Password?</a>
+                            <small class="form-text text-muted mt-3">
+                                <a routerLink="/auth/forgot-password" class="forgot-password-link">Forgot Password?</a>
                             </small> 
                         </div>
                         <div class="text-center account-btn mt-md" (click)="login()">

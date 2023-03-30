@@ -27,6 +27,10 @@ export class AuthService {
         return this.http.put(`http://localhost:3000/signup/${id}/`, payload);
     }
 
+    profile(): Observable<any> {
+        return this.http.get(`http://localhost:3000/signup`);
+    }
+
     logout() {
         this.storageService.clearCookie();
         this.router.navigate(['/']);

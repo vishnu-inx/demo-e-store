@@ -1,0 +1,144 @@
+.footer-main {
+    background-color: var(--footer-color);
+    overflow-x: hidden;
+    .footer-label {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        line-height: normal;
+        align-items: baseline;
+
+        div {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            display: flex;
+            align-items: baseline;
+            flex-direction: row;
+            justify-content: flex-start;
+            font-family: LatoBlack;
+            letter-spacing: 0px;
+            color: var(--background-xlight);
+            line-height: normal;
+        }
+    }
+}
+
+.icon-linkedin {
+    background-color: var(--primary-color);
+    color: var(--gray-background);
+}
+
+.footer-gray {
+    background-color: var(--gray-background);
+}
+
+ul {
+    padding-inline-start: 0px;
+
+    li.list-item {
+        color: var(--gray-border);
+        list-style: none;
+        line-height: 1.5;
+    }
+}
+
+.font13 {
+    font-size: 13px;
+}
+
+.form-lable {
+    color: var(--form-label);
+}
+
+.form-input {
+    color: var(--gray-dark-color);
+    background-color: var(--background-light);
+    border: 1px solid var(--gray-background);
+    border-radius: 3px;
+    letter-spacing: 0px;
+    padding: 16px;
+    font-family: LatoRegular;
+    font-size: 13px;
+    width: 100%;
+}
+
+li {
+    cursor: pointer !important;
+}
+
+.contact-item {
+    padding: 20px 15px;
+
+    img {
+        height: 45px;
+        width: auto;
+    }
+}
+
+.contact-info-img {
+    width: 45px;
+    text-align: center;
+}
+
+.contact-number-info {
+    display: inline-grid;
+    padding-left: 15px
+}
+
+.contact-number-info-text {
+    text-align: left;
+    font-family: MontserratMedium;
+    color: var(--primary-color);
+    font-size: 17px;
+}
+
+.contact-number-info-detail {
+    text-align: left;
+    font-family: MontserratRegular;
+    font-size: 11px;
+    color: var(--font-basic-color);
+}
+
+.btn-register-load {
+    background-color: rgb(248, 187, 187);
+}
+
+@media screen and (max-width: 768px) {
+    ul li.list-item {
+        line-height: 1.5;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .form-input {
+        padding: 10px;
+    }
+
+    .btn-register {
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .footer-bottom {
+        padding-bottom: 25px;
+    }
+
+    .footer-social-link {
+        justify-content: center;
+    }
+
+    .footer-address {
+        text-align: center;
+    }
+
+    .footer-main {
+        .footer-label {
+            padding: 15px;
+
+            div {
+                padding: 5px 0;
+            }
+        }
+    }
+}

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { GeneralService, StorageService, AuthService, ProductService } from 'src/app/core/services';
+import { StorageService, AuthService, ProductService, GeneralService } from 'src/app/core/services';
 
 @Component({
     selector: 'app-header',
@@ -25,36 +25,32 @@ export class HeaderComponent implements OnInit {
             "link": "/home/product-category/Other"
         }
     ];
-    user: any;
-    searchOutput: any;
-    showDrop = false;
-    model: any;
+    searchResult: any;
+    showSearchModel = false;
+    searchKeyword: any;
 
     constructor(
-        private generalService: GeneralService,
+        private generalService: GeneralService, 
         private productService: ProductService,
         public storageService: StorageService,
-        private authService : AuthService,
+        private authService: AuthService,
         private router: Router,
-    ) {
-
-    }
+    ) { }
 
     ngOnInit(): void {
     }
 
-    dropClose() {
+    closeSearchModel() {
         setTimeout(() => {
-            this.showDrop = false;
+            this.showSearchModel = false;
         }, 150);
     }
 
-    searchP(val: any) {
-        this.showDrop = false;
-        this.searchOutput = ["das","da"];
+    onSearch(val: any) {
+        this.showSearchModel = false;
         this.productService.searchProduct(val).subscribe((res: any) => {
-            this.showDrop = true;
-            this.searchOutput = res;
+            this.showSearchModel = true;
+            this.searchResult = res;
         })
     }
 
@@ -62,6 +58,7 @@ export class HeaderComponent implements OnInit {
         this.router.routeReuseStrategy.shouldReuseRoute = function () {
             return false;
         };
+        this.searchKeyword = '';
     }
 
     logout() {

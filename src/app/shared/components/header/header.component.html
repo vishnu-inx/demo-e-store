@@ -11,7 +11,7 @@
 							<img src="assets/imgs/headphone.png" class="height30" alt="icon">
 							<div class="col-center px-2">
 								<span class="support8">We are glad to be here for you.</span>
-								<span class="primary12">+12 12 234 57 78</span>
+								<span class="primary12"> <a class="no-style" href="tel:12 12 234 57 78">+12 12 234 57 78</a></span>
 							</div>
 						</a>
 					</li>
@@ -40,16 +40,16 @@
 					</li>
 				</div>
 
-				<!-- search bar -->
+				<!-- search -->
 				<li *ngIf="this.storageService.getCookie('isLogin')">
 					<div class="searchbar position-relative">
-						<input placeholder="Search" id="typeahead-focus1" type="text"
-							(focusout)="dropClose()" (focus)="showDrop = true" autocomplete="off" class="search-input"
-							[(ngModel)]="model" (ngModelChange)="searchP(model)" />
+						<input placeholder="🔍 products" id="typeahead-focus1" type="text"
+							(focusout)="closeSearchModel()" (focus)="showSearchModel = true" autocomplete="off" class="search-input"
+							[(ngModel)]="searchKeyword" (ngModelChange)="onSearch(searchKeyword)" />
 						<a class="search-btn" i-bs name="search" height="17px" width="17px"></a>
 					</div>
-					<div *ngIf="searchOutput && showDrop" class="search-wrapper">
-						<div *ngFor="let data of searchOutput">
+					<div *ngIf="searchResult && showSearchModel" class="search-wrapper">
+						<div *ngFor="let data of searchResult">
 							<a [routerLink]="['/home/product/', data.id]" (click)="refreshRoute()"
 								class="d-flex align-items-center gray-link">
 								<div>
@@ -62,7 +62,7 @@
 								</div>
 							</a>
 						</div>
-						<div *ngIf="!searchOutput.length" class="text-center">No records found</div>
+						<div *ngIf="!searchResult.length" class="text-center">No records found</div>
 					</div>
 				</li>
             </ul>

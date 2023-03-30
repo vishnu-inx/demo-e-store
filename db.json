@@ -8,7 +8,7 @@
       "gender": "Male",
       "phone": "0123464789",
       "address": "800 NW Ave, Florida",
-      "password": "12345"
+      "password": "123"
     },
     {
       "id": "2",
@@ -27,7 +27,8 @@
       "email": "karan123@mailinator.com",
       "gender": "male",
       "phone": "0123456789",
-      "address": "Ranip Ahmedabad Gujarat India 380061"
+      "address": "Ranip Ahmedabad Gujarat India 380061",
+      "password": "1234"
     }
   ],
   "products": [
